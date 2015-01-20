@@ -20,9 +20,6 @@ var bio = {
 bio.work = {
     "jobs": [
         {
-            "employer": "Pomeroy",
-            "title": "Desktop Support Specialist",
-            "date": "10/21/2013 - Present",{
     "jobs": [
         {
             "employer": "Pomeroy",
@@ -94,5 +91,5 @@ bio[education] ={
             }
         ]
     ]
-}
-
+var formattedSkill = HTMLskills.replace("%data%", bio.skills );
+$('#header').append(bio.skill);
