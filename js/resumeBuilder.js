@@ -11,9 +11,33 @@ var bio = {
         "github": "hensleyimmanuel"
         },
     "welcomeMessage": "Hello welecome to my Resume please feel free to contact me.",
-    "skills": ["awesomness","smart","programming"],
+    "skills": ["awesomness","badass","programming"],
     "Pic": "me"
 };
+projects = {
+    "project": [
+        {
+            "title": "sample 1",
+            "dates": "2004-2008",
+            "description": "this is an example desciption",
+            "image": <img src="http://placehold.it/350x150">
+        },
+        {
+            "title": "sample 2",
+            "dates": "2004-2008",
+            "description": "this is an example desciption",
+            "image": <img src="http://placehold.it/350x150">
+        },
+        {
+            "title": "sample 3",
+            "dates": "2004-2008",
+            "description": "this is an example desciption",
+            "image": <img src="http://placehold.it/350x150">
+        }
+    ]
+};
+
+];
 work = {
     "jobs": [
         {
@@ -94,6 +118,7 @@ $('#skills').append(formattedSkill);
 
 // -- Lines below are my jobs appended to my resume --
  
+function displayWork() {
 for (job in work.jobs) {
 $('#workExperience').append(HTMLworkStart);
 var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
@@ -105,3 +130,31 @@ $('.work-entry:last').append(formattedEmployerTitle);
 $('.work-entry:last').append(formattedWorkDates);
 $('.work-entry:last').append(formattedWorkDescritption);
 }
+}
+displayWork();
+
+// -- Lines Below show location of each  click on screen --
+ 
+$(document).click(function(loc) {
+   var x = loc.pageX;
+   var y = loc.pageY;
+   
+  logClicks(x,y);
+});
+
+// -- Lines Below append an internationalized version of my name to the resume --
+
+function inName(name) {
+ name = name.trim().split(" ");
+ console.log(name);
+ name[1] = name[1].toUpperCase()
+ name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+ return name[0] + " " + name[1];
+ }
+ $('#main').append(internationalizeButton);
+ 
+ 
+ var displayProjects = function() {
+ var formattedProjectTitle = HTMLprojectTitle.replace("%data%", 
+ $('#main').append(HTMLprojectStart);
+ };
