@@ -14,30 +14,30 @@ var bio = {
     "skills": ["awesomness","badass","programming"],
     "Pic": "me"
 };
-projects = {
-    "project": [
+project = {
+    "projects": [
         {
             "title": "sample 1",
             "dates": "2004-2008",
             "description": "this is an example desciption",
-            "image": <img src="http://placehold.it/350x150">
+            "image": 'C:\Users\immanuel.hensley\Desktop\Newest Resume\frontend-nanodegree-resume\images'
         },
         {
             "title": "sample 2",
             "dates": "2004-2008",
             "description": "this is an example desciption",
-            "image": <img src="http://placehold.it/350x150">
+            "image": 'C:\Users\immanuel.hensley\Desktop\Newest Resume\frontend-nanodegree-resume\images'
         },
         {
             "title": "sample 3",
             "dates": "2004-2008",
             "description": "this is an example desciption",
-            "image": <img src="http://placehold.it/350x150">
+            "image": 'href = frontend-nanodegree-resume\images'
         }
     ]
 };
 
-];
+
 work = {
     "jobs": [
         {
@@ -97,12 +97,15 @@ education ={
 }
 // -- Lines Below are appending my name and role to my resume --
 
+function header() {
 var name = "Immanuel Hensley";
 var role = "Front-End Web Developer";
 var formattedName = HTMLheaderName.replace("%data%", name);
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+}
+header();
 
 //  -- Lines Below are the Skills sections appended to my resume --
 
@@ -155,6 +158,16 @@ function inName(name) {
  
  
  var displayProjects = function() {
- var formattedProjectTitle = HTMLprojectTitle.replace("%data%", 
- $('#main').append(HTMLprojectStart);
- };
+   	for (current in project.projects) {
+        $('#projects').append(HTMLprojectStart);	
+        var formatttedProjectTitle = HTMLprojectTitle.replace('%data%', project.projects[current].title);
+		var formattedProjectDates = HTMLprojectDates.replace('%data%', project.projects[current].dates);
+		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.projects[current].description);
+		var formattedProjectImage = HTMLprojectImage.replace('%data%', project.projects[current].image);
+	    $('#projects').append(formatttedProjectTitle);
+		$('#projects').append(formattedProjectDates);
+		$('#projects').append(formattedProjectDescription);
+		$('#projects').append(formattedProjectImage);
+		}
+}
+displayProjects();
