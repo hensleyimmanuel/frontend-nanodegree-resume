@@ -14,26 +14,20 @@ var bio = {
     "skills": ["awesomness","badass","programming"],
     "Pic": "me"
 };
-project = {
+projects = {
     "projects": [
         {
             "title": "sample 1",
             "dates": "2004-2008",
             "description": "this is an example desciption",
-            "image": 'C:\Users\immanuel.hensley\Desktop\Newest Resume\frontend-nanodegree-resume\images'
+            "image":['http://lorempixel.com/350/250']
         },
         {
             "title": "sample 2",
             "dates": "2004-2008",
             "description": "this is an example desciption",
-            "image": 'C:\Users\immanuel.hensley\Desktop\Newest Resume\frontend-nanodegree-resume\images'
+            "image": ['http://lorempixel.com/400/200']
         },
-        {
-            "title": "sample 3",
-            "dates": "2004-2008",
-            "description": "this is an example desciption",
-            "image": 'href = frontend-nanodegree-resume\images'
-        }
     ]
 };
 
@@ -157,17 +151,26 @@ function inName(name) {
  $('#main').append(internationalizeButton);
  
  
- var displayProjects = function() {
-   	for (current in project.projects) {
-        $('#projects').append(HTMLprojectStart);	
-        var formatttedProjectTitle = HTMLprojectTitle.replace('%data%', project.projects[current].title);
-		var formattedProjectDates = HTMLprojectDates.replace('%data%', project.projects[current].dates);
-		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.projects[current].description);
-		var formattedProjectImage = HTMLprojectImage.replace('%data%', project.projects[current].image);
-	    $('#projects').append(formatttedProjectTitle);
+projects.display = function() {
+  for (current in projects.projects) {
+      $('#projects').append(HTMLprojectStart);
+		
+        var formatttedProjectTitle = HTMLprojectTitle.replace('%data%', projects.projects[current].title);
+		$('#projects').append(formatttedProjectTitle);
+		
+		var formattedProjectDates = HTMLprojectDates.replace('%data%', projects.projects[current].dates);
 		$('#projects').append(formattedProjectDates);
+		
+		var formattedProjectDescription = HTMLprojectDescription.replace('%data%', projects.projects[current].description);
 		$('#projects').append(formattedProjectDescription);
-		$('#projects').append(formattedProjectImage);
+		
+		if (projects.projects[current].image.length > 0) {
+		  for (images in projects.projects[current].image) {
+		    var formattedProjectImage = HTMLprojectImage.replace('%data%', projects.projects[current].image[images]);
+		    $('#projects').append(formattedProjectImage);
+			}
 		}
+	}
 }
-displayProjects();
+projects.display()
+
