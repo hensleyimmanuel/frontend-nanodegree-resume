@@ -38,6 +38,7 @@ work = {
             "employer": "Pomeroy",
             "title": "Desktop Support Specialist",
             "date": "10/21/2013 - Present",
+			"location": "5 Fountain place, Frankfort, KY 40601",
             "description": "Installing and configuring computer hardware operating systems and applications.  Monitoring and maintaining computer systems and networks;  Talking staff/clients through a series of actions, either face to face or over the telephone; Troubleshooting system and network problems and diagnosing and solving hardware/software faults;  Replacing parts as required;  Wrote complex routines for system critical procedure and Diagnostic Routines  Following diagrams and written instructions to repair a fault or set up a system;  Supporting the roll-out of new applications;  Setting up new accounts and profiles and dealing with password issues;  Responding within agreed time limits to call-outs;  Working continuously on a task until completion (or referral to third parties, if appropriate);  Prioritizing and managing many open cases at one time; Rapidly establishing a good working relationship with customers and other professionals (e.g., software developers);  Testing and evaluating new technology;  Conducting electrical safety checks on computer equipment  used Dame ware to remote into clients pc’s from around the state to resolve a wide array of issues.  Install and maintain programs that are vital to everyday functions.  Work with third party companies to resolve issues with dell switches, as well as running Ethernet cable to connect Ports to the domain.  Used Active Directory to manage and maintain all devices on the domain"
         },
         {
@@ -55,7 +56,7 @@ work = {
     ]
 }
 education ={
-    "Schools": [
+    "schools": [
         {
             "name": "Anderson County High School",
             "degree": "High School Diploma",
