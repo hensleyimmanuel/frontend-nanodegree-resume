@@ -3,7 +3,7 @@
 var bio = {
     "name": "Immanuel Hensley",
     "role": "Front-End Web Developer",
-    "contact": {
+    "contacts": {
         "mobile": "(502) - 219 - 0134",
         "email": "hensleyimmanuel@yahoo.com",
         "location": "500 Shenandoah Dr. Frankfort Kentucky 40601",
@@ -150,6 +150,7 @@ function inName(name) {
  }
  $('#main').append(internationalizeButton);
  
+ // -- Lines Below append projects to resume --
  
 projects.display = function() {
   for (current in projects.projects) {
@@ -173,4 +174,12 @@ projects.display = function() {
 	}
 }
 projects.display()
+
+// -- Lines Below append map to my resume --
+
+$('#mapDiv').append(googleMap);
+
+
+
+
 
